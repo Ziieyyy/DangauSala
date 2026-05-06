@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details | Dangau Sala D’Kontena</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Override body to be fixed screen without scroll */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* NO SCROLLING */
+            background-color: var(--bg-light, #ffffff);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ensure header from style.css takes its natural space */
+        header {
+            flex-shrink: 0;
+            position: relative !important; /* override fixed from style.css */
+            background-color: var(--primary-dark) !important; /* force solid bg */
+            z-index: 100;
+        }
+
+        /* The main content area takes up all remaining space between header and footer */
+        main.fixed-content {
+            flex-grow: 1;
+            display: flex;
+            overflow: hidden; /* no internal scroll */
+            background: #ffffff;
+        }
+
+        /* Full Screen Split Layout */
+        .detail-card {
+            display: flex;
+            flex-direction: row-reverse; /* Right: Image, Left: Details */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Right Side: Image */
+        .detail-img-wrapper {
+            width: 50%;
+            height: 100%;
+        }
+        .detail-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Left Side: Details */
+        .detail-content {
+            width: 50%;
+            padding: 4% 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .detail-content h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif; /* override lora if needed */
+        }
+        .feature-list {
+            margin-bottom: 20px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .feature-item i {
+            color: var(--accent);
+            width: 30px;
+            font-size: 1.2rem;
+        }
+        .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        .price-tag {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+        .price-tag span {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--secondary);
+        }
+        
+        /* CTA Button */
+        .btn-cta {
+            background: linear-gradient(135deg, var(--highlight), var(--accent));
+            color: var(--primary-dark);
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            width: fit-content;
+            box-shadow: 0 10px 25px rgba(111, 209, 215, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-cta:hover {
+            transform: scale(1.05) translateY(-3px);
+            background: linear-gradient(135deg, #4ce0c3, #5bc3c9);
+            box-shadow: 0 15px 30px rgba(111, 209, 215, 0.4);
+            color: var(--primary-dark);
+        }
+
+        /* Animations */
+        @keyframes revealImage {
+            0% { transform: scale(1.05) translateX(20px); opacity: 0; filter: blur(5px); }
+            100% { transform: scale(1) translateX(0); opacity: 1; filter: blur(0); }
+        }
+        @keyframes slideUpFade {
+            0% { transform: translateY(40px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .detail-img-wrapper {
+            opacity: 0;
+            animation: revealImage 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .detail-content h3 {
+            opacity: 0;
+            animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+        }
+        .feature-list {
+            opacity: 0;
+            animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+        }
+        .description {
+            opacity: 0;
+            animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+        }
+        .price-tag {
+            opacity: 0;
+            animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+        }
+        .btn-cta {
+            opacity: 0;
+            animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+        }
+
+        /* Footer override */
+        footer {
+            flex-shrink: 0;
+            position: relative;
+            padding: 20px 5%; /* slightly smaller padding for fixed screen */
+        }
+
+        /* Responsiveness for small screens where fixed height might break content */
+        @media (max-width: 900px) {
+            body {
+                overflow-y: auto; /* Allow scroll on mobile */
+                height: auto;
+            }
+            .detail-card {
+                flex-direction: column;
+                height: auto;
+            }
+            .detail-img-wrapper, .detail-content {
+                width: 100%;
+            }
+            .detail-img-wrapper {
+                height: 50vh;
+            }
+            .detail-content {
+                padding: 10% 8%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header from style.css -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dangau Sala</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#rooms">Rooms</a></li>
+                <li><a href="index.html#activities">Activities</a></li>
+                <li><a href="index.html#facilities">Facilities</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="fixed-content">
+        <!-- Jerai View -->
+        <div id="jerai-view" class="detail-card">
+            <div class="detail-content">
+                <h3>Jerai View</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-bed"></i> 1 Queen, 2 Double Deck
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-friends"></i> 6 Adults
+                    </div>
+                </div>
+                <p class="description">Spacious room featuring views of Mount Jerai. Suitable for larger groups and families needing extra space.</p>
+                <div class="price-tag">RM250 <span>/ Night</span></div>
+                <a href="https://wa.me/60123456789" class="btn-cta" target="_blank">
+                    <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Book via WhatsApp
+                </a>
+            </div>
+            <div class="detail-img-wrapper">
+                <img src="pic/rooms/JeraiView.jpeg" alt="Jerai View" class="detail-img">
+            </div>
+        </div>
+
+        <!-- Pool View -->
+        <div id="pool-view" class="detail-card" style="display: none;">
+            <div class="detail-content">
+                <h3>Pool View</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-bed"></i> Multiple Bed Options
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-friends"></i> Up to 4 Adults, 1 Child
+                    </div>
+                </div>
+                <p class="description">Modern container-style room near the pool. Fully equipped with basic amenities for a comfortable stay.</p>
+                <div class="price-tag">RM180 <span>/ Night</span></div>
+                <a href="https://wa.me/60123456789" class="btn-cta" target="_blank">
+                    <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Book via WhatsApp
+                </a>
+            </div>
+            <div class="detail-img-wrapper">
+                <img src="pic/rooms/PoolView1.jpeg" alt="Pool View" class="detail-img">
+            </div>
+        </div>
+
+        <!-- Paddy View -->
+        <div id="paddy-view" class="detail-card" style="display: none;">
+            <div class="detail-content">
+                <h3>Paddy View</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-bed"></i> 1 Queen
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-friends"></i> 2 Adults, 1 Child
+                    </div>
+                </div>
+                <p class="description">Experience authentic kampung lifestyle with beautiful and serene paddy field views.</p>
+                <div class="price-tag">RM150 <span>/ Night</span></div>
+                <a href="https://wa.me/60123456789" class="btn-cta" target="_blank">
+                    <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Book via WhatsApp
+                </a>
+            </div>
+            <div class="detail-img-wrapper">
+                <img src="pic/rooms/Paddyview1.jpeg" alt="Paddy View" class="detail-img">
+            </div>
+        </div>
+
+        <!-- River View -->
+        <div id="river-view" class="detail-card" style="display: none;">
+            <div class="detail-content">
+                <h3>River View</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-bed"></i> 1 Queen
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-friends"></i> 2 Adults
+                    </div>
+                </div>
+                <p class="description">Relaxing room situated by the river. A great choice for those wanting a peaceful retreat.</p>
+                <div class="price-tag">RM130 <span>/ Night</span></div>
+                <a href="https://wa.me/60123456789" class="btn-cta" target="_blank">
+                    <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Book via WhatsApp
+                </a>
+            </div>
+            <div class="detail-img-wrapper">
+                <img src="pic/rooms/RiverView.jpeg" alt="River View" class="detail-img">
+            </div>
+        </div>
+
+        <!-- Traditional Malay House -->
+        <div id="traditional-malay-house" class="detail-card" style="display: none;">
+            <div class="detail-content">
+                <h3>Traditional Malay House</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i> Large Groups
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-friends"></i> Up to 15 guests
+                    </div>
+                </div>
+                <p class="description">Experience an authentic kampung lifestyle. Suitable for large families and gatherings.</p>
+                <div class="price-tag">Contact for Price</div>
+                <a href="https://wa.me/60123456789" class="btn-cta" target="_blank">
+                    <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Book via WhatsApp
+                </a>
+            </div>
+            <div class="detail-img-wrapper">
+                <img src="pic/rooms/traditionalMalayHouse.jpg" alt="Traditional Malay House" class="detail-img" onerror="this.src='pic/resort/resort-2.jpg'">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer from style.css -->
+    <footer>
+        <div class="container" style="display:flex; justify-content: space-between; align-items:center; max-width: 1200px; margin: 0 auto; width: 100%;">
+            <p>&copy; Dangau Sala D’Kontena 2026. All Rights Reserved.</p>
+            <div class="social-links" style="display:flex; gap:15px; font-size: 1.2rem; margin-bottom: 0;">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to isolate specific room via URL hash -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            const allRooms = document.querySelectorAll('.detail-card');
+            
+            // Hide all rooms first
+            allRooms.forEach(room => room.style.display = 'none');
+            
+            let found = false;
+            
+            if (hash) {
+                allRooms.forEach(room => {
+                    if ('#' + room.id === hash) {
+                        room.style.display = 'flex';
+                        found = true;
+                        document.title = room.querySelector('h3').innerText + ' | Dangau Sala D’Kontena';
+                    }
+                });
+            }
+            
+            // If no match found or no hash, display the first one (Jerai View) by default
+            if (!found && allRooms.length > 0) {
+                allRooms[0].style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
