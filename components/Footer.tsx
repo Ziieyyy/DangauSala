@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Camera, MessageCircle, Send, Play, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Music, MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -17,17 +17,11 @@ export default function Footer() {
               A premium agrotourism retreat in Yan, Kedah. Preserving the essence of traditional Malay village life through modern container living and community-based tourism.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-highlight hover:text-primary-dark transition-all">
-                <Camera size={18} />
+              <Link href="https://www.facebook.com/DangauSala?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-highlight hover:text-primary-dark transition-all">
+                <Facebook size={18} />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-highlight hover:text-primary-dark transition-all">
-                <MessageCircle size={18} />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-highlight hover:text-primary-dark transition-all">
-                <Send size={18} />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-highlight hover:text-primary-dark transition-all">
-                <Play size={18} />
+              <Link href="https://www.tiktok.com/@dangausalaresort?_r=1&_t=ZS-96Bk3vfpceq" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-highlight hover:text-primary-dark transition-all">
+                <Music size={18} />
               </Link>
             </div>
           </div>
