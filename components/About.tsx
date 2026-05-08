@@ -53,9 +53,11 @@ export default function About() {
             className="relative"
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-              <img 
+              <Image 
                 src="/pic/resort/resort-2.jpg" 
                 alt="Dangau Sala Resort View" 
+                width={800}
+                height={600}
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -66,9 +68,11 @@ export default function About() {
               transition={{ duration: 1, delay: 0.3 }}
               className="absolute -bottom-10 -right-10 w-2/3 z-20 rounded-2xl overflow-hidden shadow-2xl border-8 border-white hidden md:block"
             >
-              <img 
+              <Image 
                 src="/pic/resort/resort-3.jpg" 
                 alt="Dangau Sala Resort Detail" 
+                width={600}
+                height={400}
                 className="w-full h-auto object-cover"
               />
             </motion.div>

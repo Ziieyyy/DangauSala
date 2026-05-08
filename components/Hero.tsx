@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
@@ -8,9 +9,13 @@ export default function Hero() {
     <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center text-white">
       {/* Background with cinematic overlay */}
       <div className="absolute inset-0 bg-primary-dark">
-        <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] scale-110 motion-safe:animate-[zoom_20s_infinite_alternate]"
-          style={{ backgroundImage: "url('/pic/resort/traditionalMalayHouse.jpg')" }}
+        <Image
+          src="/pic/resort/traditionalMalayHouse.jpg"
+          alt="Dangau Sala Resort Heritage House"
+          fill
+          priority
+          className="object-cover transition-transform duration-[10s] scale-110 motion-safe:animate-[zoom_20s_infinite_alternate]"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-primary-dark/80" />
         
@@ -25,7 +30,7 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
         >
           <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-[0.2em] mb-6 text-highlight">
-            Established 2016
+            Established 2019
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-serif font-bold leading-[1.1] md:leading-[0.9] tracking-tighter mb-6 md:mb-8">
             Escape Into <br />

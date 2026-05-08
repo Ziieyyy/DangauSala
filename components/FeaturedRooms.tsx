@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Users, Bed } from "lucide-react";
 
 const featuredRooms = [
@@ -72,7 +73,13 @@ export default function FeaturedRooms() {
               className="group"
             >
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-xl">
-                <img src={room.image} alt={room.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <Image 
+                  src={room.image} 
+                  alt={room.title} 
+                  width={500}
+                  height={625}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                    <a 
                     href={`https://wa.me/60163799466?text=I'm interested in booking ${room.title}`}

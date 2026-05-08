@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 import { Maximize2, X } from "lucide-react";
 
 const images = [
@@ -62,9 +63,11 @@ export default function Gallery() {
                 img.size === "wide" ? "col-span-2" : ""
               }`}
             >
-              <img
+              <Image
                 src={img.src}
                 alt={img.category}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
@@ -97,15 +100,20 @@ export default function Gallery() {
             >
               <X size={48} strokeWidth={1} />
             </motion.button>
-            <motion.img
+            <motion.div 
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 150 }}
-              src={selectedImg}
-              alt="Fullscreen view"
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
+              className="relative w-full h-full flex items-center justify-center"
+            >
+              <Image
+                src={selectedImg}
+                alt="Fullscreen view"
+                fill
+                className="object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
