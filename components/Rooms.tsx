@@ -55,7 +55,6 @@ const rooms = [
     price: "Contact for Pricing",
     image: "/pic/resort/traditionalMalayHouse.jpg",
   },
-  },
 ];
 
 export default function Rooms() {
