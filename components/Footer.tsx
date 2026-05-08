@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="text-3xl font-serif font-bold text-white tracking-tighter mb-6 block">
-              Dangau Sala
+              Dangau Sala Resort
             </Link>
             <p className="text-white/60 max-w-md mb-8 leading-relaxed font-light">
               A premium agrotourism retreat in Yan, Kedah. Preserving the essence of traditional Malay village life through modern container living and community-based tourism.
@@ -64,7 +64,7 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/40 text-xs tracking-widest uppercase font-medium">
-            © 2026 Dangau Sala D’Kontena. All rights reserved.
+            © 2026 Dangau Sala Resort D’Kontena. All rights reserved.
           </p>
           <div className="flex gap-8 text-white/40 text-xs tracking-widest uppercase font-medium">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>

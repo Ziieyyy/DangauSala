@@ -55,7 +55,7 @@ export default function About() {
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img 
                 src="/pic/resort/resort-2.jpg" 
-                alt="Dangau Sala View" 
+                alt="Dangau Sala Resort View" 
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -68,7 +68,7 @@ export default function About() {
             >
               <img 
                 src="/pic/resort/resort-3.jpg" 
-                alt="Dangau Sala Detail" 
+                alt="Dangau Sala Resort Detail" 
                 className="w-full h-auto object-cover"
               />
             </motion.div>
@@ -88,7 +88,7 @@ export default function About() {
               A Legacy of <span className="italic">Kampung Simplicity</span>
             </h2>
             <p className="text-lg text-primary-dark/70 mb-6 leading-relaxed">
-              Founded in 2016 by En. Hadi, Dangau Sala D’Kontena was born from a vision to preserve the authentic Malay village experience while offering modern comfort.
+              Founded in 2016 by En. Hadi, Dangau Sala Resort D’Kontena was born from a vision to preserve the authentic Malay village experience while offering modern comfort.
             </p>
             <p className="text-lg text-primary-dark/70 mb-10 leading-relaxed">
               Located in the heart of Yan, Kedah, our resort is more than just a stay—it's a journey back to basics, where the rhythm of the paddy fields and the majesty of Mount Jerai create a perfect harmony for the soul.

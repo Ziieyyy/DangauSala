@@ -60,7 +60,7 @@ export default function Experience() {
             viewport={{ once: true }}
             className="text-3xl md:text-6xl font-serif font-bold text-primary-dark tracking-tighter"
           >
-            A Day at <span className="italic">Dangau Sala</span>
+            A Day at <span className="italic">Dangau Sala Resort</span>
           </motion.h2>
         </div>
 

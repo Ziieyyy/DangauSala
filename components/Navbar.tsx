@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="w-full md:w-auto flex justify-between items-center">
           <Link href="/" className="text-xl md:text-2xl font-serif font-bold text-white tracking-tight">
-            Dangau Sala
+            Dangau Sala Resort
           </Link>
           <Link
             href="/rooms"

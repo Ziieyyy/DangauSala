@@ -14,7 +14,7 @@ export default function AboutPage() {
             Our <span className="italic text-highlight">Story</span>
           </h1>
           <p className="text-white/60 mt-4 max-w-2xl mx-auto font-light">
-            Discover the legacy, the passion, and the village heritage that defines Dangau Sala.
+            Discover the legacy, the passion, and the village heritage that defines Dangau Sala Resort.
           </p>
         </div>
       </div>
