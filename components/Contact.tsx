@@ -69,7 +69,7 @@ export default function Contact() {
                 <h4 className="text-xl font-serif font-bold mb-4">Visit Our Location</h4>
                 <div className="flex items-start gap-4 text-white/70 mb-6">
                   <MapPin size={24} className="text-highlight shrink-0" />
-                  <p className="leading-relaxed">Lot 1234, Kampung Sala Besar, 06900 Yan, Kedah Darul Aman, Malaysia</p>
+                  <p className="leading-relaxed">Jalan Jemerlang-Kampung Seberang Jaya, Jalan Jemerlang Kuala Sala, 06800 Yan, Kedah, Malaysia</p>
                 </div>
                 <button className="flex items-center gap-2 text-highlight font-bold hover:gap-4 transition-all">
                   Open in Google Maps <Globe size={18} />

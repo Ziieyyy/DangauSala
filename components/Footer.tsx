@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-6 font-light text-white/70">
               <li className="flex items-start gap-4">
                 <MapPin size={18} className="text-highlight shrink-0" />
-                <span>Kampung Sala Besar, 06900 Yan, Kedah</span>
+                <span>Jalan Jemerlang-Kampung Seberang Jaya, Jalan Jemerlang Kuala Sala, 06800 Yan, Kedah</span>
               </li>
               <li className="flex items-start gap-4">
                 <Phone size={18} className="text-highlight shrink-0" />
