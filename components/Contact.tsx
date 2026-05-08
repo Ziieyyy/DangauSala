@@ -29,7 +29,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-secondary mb-1">Call Us</h4>
-                  <p className="text-lg font-bold text-primary-dark">+60 16-379 9466</p>
+                  <p className="text-base font-bold text-primary-dark">+60 16-379 9466 (En. Hadi)</p>
+                  <p className="text-base font-bold text-primary-dark">+60 12-553 6562 (Pn. Ana)</p>
                 </div>
               </div>
               
@@ -59,7 +60,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-secondary mb-1">Check-in</h4>
-                  <p className="text-lg font-bold text-primary-dark">2:00 PM onwards</p>
+                  <p className="text-lg font-bold text-primary-dark">2:00 PM - 12:00 AM</p>
                 </div>
               </div>
             </div>

@@ -35,11 +35,11 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-widest text-highlight mb-8">Explore</h4>
             <ul className="space-y-4 font-light text-white/70">
-              <li><Link href="#home" className="hover:text-highlight transition-colors">Home</Link></li>
-              <li><Link href="#about" className="hover:text-highlight transition-colors">About Story</Link></li>
-              <li><Link href="#rooms" className="hover:text-highlight transition-colors">Stay Experiences</Link></li>
-              <li><Link href="#experience" className="hover:text-highlight transition-colors">Activities</Link></li>
-              <li><Link href="#gallery" className="hover:text-highlight transition-colors">Visual Gallery</Link></li>
+              <li><Link href="/" className="hover:text-highlight transition-colors">Home</Link></li>
+              <li><Link href="/about" className="hover:text-highlight transition-colors">About Story</Link></li>
+              <li><Link href="/rooms" className="hover:text-highlight transition-colors">Stay Experiences</Link></li>
+              <li><Link href="/experience" className="hover:text-highlight transition-colors">Activities</Link></li>
+              <li><Link href="/experience#gallery" className="hover:text-highlight transition-colors">Visual Gallery</Link></li>
             </ul>
           </div>
 

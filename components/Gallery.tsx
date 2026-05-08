@@ -5,16 +5,18 @@ import { useState } from "react";
 import { Maximize2, X } from "lucide-react";
 
 const images = [
-  { src: "/pic/resort/resort-4.jpg", category: "Nature", size: "tall" },
-  { src: "/pic/resort/resort-5.jpg", category: "Nature", size: "small" },
-  { src: "/pic/resort/resort-6.jpg", category: "Rooms", size: "wide" },
-  { src: "/pic/resort/resort-7.jpg", category: "Farm Life", size: "small" },
-  { src: "/pic/resort/resort-8.jpg", category: "Activities", size: "tall" },
-  { src: "/pic/resort/resort-9.jpg", category: "Scenic Views", size: "small" },
-  { src: "/pic/resort/resort-10.jpg", category: "Nature", size: "wide" },
-  { src: "/pic/resort/resort-11.jpg", category: "Farm Life", size: "small" },
-  { src: "/pic/resort/resort-12.jpg", category: "Scenic Views", size: "tall" },
-  { src: "/pic/resort/resort-13.jpg", category: "Rooms", size: "small" },
+  { src: "/pic/resort/resort-13.jpg", category: "Gazebo", desc: "Sun loungers on a wooden deck with a draped gazebo.", size: "tall" },
+  { src: "/pic/resort/resort-14.jpg", category: "Nature", desc: "Traditional pond gazebo overlooking lush open fields.", size: "small" },
+  { src: "/pic/resort/traditionalMalayHouse.jpg", category: "Heritage", desc: "Heritage Malay stilt house with a manicured lawn.", size: "wide" },
+  { src: "/pic/resort/resort-2.jpg", category: "Games", desc: "Classic Congkak and Carrom traditional game setup.", size: "small" },
+  { src: "/pic/resort/resort-3.jpg", category: "Dining", desc: "Rustic brick cafe counter under a thatched roof.", size: "tall" },
+  { src: "/pic/resort/resort-4.jpg", category: "Dining", desc: "Village-style entrance to the Dangau Kitchen.", size: "small" },
+  { src: "/pic/resort/resort-5.jpg", category: "Dining", desc: "Local brick stall for 'Celup Tepung' snacks.", size: "wide" },
+  { src: "/pic/resort/resort-6.jpg", category: "Dining", desc: "Garden kitchen serving fresh 'Masakan Panas'.", size: "small" },
+  { src: "/pic/resort/resort-7.jpg", category: "Cafe", desc: "Modern container cafe with heavy timber seating.", size: "tall" },
+  { src: "/pic/resort/resort-8.jpg", category: "Lounge", desc: "Breezy communal lounge beneath a traditional house.", size: "small" },
+  { src: "/pic/resort/resort-11.jpg", category: "Pool", desc: "Bright outdoor pool area with palm trees and modern villas.", size: "wide" },
+  { src: "/pic/resort/resort-12.jpg", category: "Pool", desc: "Swimming pool featuring a black container-style clubhouse.", size: "small" },
 ];
 
 export default function Gallery() {
@@ -69,8 +71,7 @@ export default function Gallery() {
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-highlight text-xs font-bold uppercase tracking-widest block mb-2">{img.category}</span>
                   <div className="flex justify-between items-center">
-                    <h4 className="text-white font-serif font-bold text-lg">Yan, Kedah</h4>
-                    <Maximize2 size={20} className="text-white/70" />
+                    <h4 className="text-white font-serif font-bold text-sm md:text-base leading-tight">{img.desc}</h4>
                   </div>
                 </div>
               </div>

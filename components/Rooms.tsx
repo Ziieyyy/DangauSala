@@ -55,14 +55,6 @@ const rooms = [
     price: "Contact for Pricing",
     image: "/pic/resort/traditionalMalayHouse.jpg",
   },
-  {
-    id: "container",
-    title: "Container Suite",
-    description: "The ultimate modern agrotourism experience. Sleek design meeting the rustic charm of the village.",
-    capacity: "2 Adults, 2 Children",
-    beds: "1 King Bed, 1 Sofa Bed",
-    price: "RM220",
-    image: "/pic/resort/resort-4.jpg",
   },
 ];
 
