@@ -3,6 +3,7 @@ import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import MouseGlow from "@/components/MouseGlow";
+import StickyContact from "@/components/StickyContact";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className="selection:bg-accent selection:text-primary-dark scroll-smooth">
       <body className={`${inter.variable} ${lora.variable} antialiased`}>
         <MouseGlow />
+        <StickyContact />
         <SmoothScroll>
           {children}
         </SmoothScroll>

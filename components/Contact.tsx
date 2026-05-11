@@ -72,9 +72,14 @@ export default function Contact() {
                   <MapPin size={24} className="text-highlight shrink-0" />
                   <p className="leading-relaxed">Jalan Jemerlang-Kampung Seberang Jaya, Jalan Jemerlang Kuala Sala, 06800 Yan, Kedah, Malaysia</p>
                 </div>
-                <button className="flex items-center gap-2 text-highlight font-bold hover:gap-4 transition-all">
+                <a 
+                  href="https://maps.app.goo.gl/FMh4LdhakEDyKVdt7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-highlight font-bold hover:gap-4 transition-all w-fit"
+                >
                   Open in Google Maps <Globe size={18} />
-                </button>
+                </a>
               </div>
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-48 h-48 bg-highlight/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
             </div>

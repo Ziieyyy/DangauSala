@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import FAQ from "@/components/FAQ";
 
 export default function ContactPage() {
   return (
@@ -16,6 +17,7 @@ export default function ContactPage() {
           </p>
         </div>
       </div>
+      <FAQ />
       <Contact />
       <Footer />
     </main>

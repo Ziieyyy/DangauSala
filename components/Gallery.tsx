@@ -39,10 +39,22 @@ export default function Gallery() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-6xl font-serif font-bold text-primary-dark mb-8 md:mb-12 tracking-tighter text-center"
+            className="text-3xl md:text-6xl font-serif font-bold text-primary-dark mb-6 tracking-tighter text-center"
           >
             Capturing the <span className="italic">Soul of Yan</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-center text-primary-dark/60 max-w-2xl mb-12 leading-relaxed font-light text-lg"
+          >
+            Yan, sebuah daerah yang tenang di Kedah, kaya dengan sejarah dan keindahan alam. 
+            Terletak di kaki Gunung Jerai yang megah, kawasan ini pernah menjadi mercu tanda penting 
+            bagi pedagang dan pelaut zaman dahulu sebagai panduan pelayaran. Keindahan sawah padi 
+            yang luas dan suasana kampung yang asli menjadikan Yan destinasi yang memikat jiwa.
+          </motion.p>
         </div>
 
         <motion.div 
