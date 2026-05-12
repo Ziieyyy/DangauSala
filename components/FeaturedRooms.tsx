@@ -25,7 +25,7 @@ const featuredRooms = [
   {
     id: "traditional",
     title: "Traditional Malay House",
-    price: "Contact Us",
+    price: "RM250",
     image: "/pic/resort/traditionalMalayHouse.jpg",
     capacity: "15 Guests",
     beds: "Heritage Layout",

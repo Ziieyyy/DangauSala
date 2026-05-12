@@ -4,23 +4,21 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Rooms from "@/components/Rooms";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function RoomsPage() {
   return (
     <main>
       <Navbar />
-      <div className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+      <div className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src="/bcg.jpg"
+          alt="Rooms Background"
+          fill
+          priority
           className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-swimming-pool-in-a-luxury-hotel-4545-large.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-primary-dark/60 z-10" />

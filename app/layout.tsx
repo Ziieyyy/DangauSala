@@ -16,7 +16,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Dangau Sala Resort D’Kontena | Premium Nature Retreat",
+  title: "Dangau Sala Resort | Premium Nature Retreat",
   description: "A premium agrotourism retreat in Yan, Kedah near Mount Jerai. Experience the perfect blend of Malay village heritage and modern container living.",
 };
 

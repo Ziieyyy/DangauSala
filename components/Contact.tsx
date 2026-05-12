@@ -34,7 +34,11 @@ export default function Contact() {
                 </div>
               </div>
               
-              <div className="glass p-8 rounded-2xl border-primary-dark/5 flex items-start gap-6 hover:shadow-xl transition-all group">
+              <a 
+                href="https://wa.me/60163799466" 
+                target="_blank" 
+                className="glass p-8 rounded-2xl border-primary-dark/5 flex items-start gap-6 hover:shadow-xl transition-all group cursor-pointer"
+              >
                 <div className="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center text-primary-dark group-hover:bg-highlight transition-colors">
                   <MessageCircle size={24} />
                 </div>
@@ -42,7 +46,7 @@ export default function Contact() {
                   <h4 className="text-xs font-bold uppercase tracking-widest text-secondary mb-1">WhatsApp</h4>
                   <p className="text-lg font-bold text-primary-dark">Chat Now</p>
                 </div>
-              </div>
+              </a>
 
               <div className="glass p-8 rounded-2xl border-primary-dark/5 flex items-start gap-6 hover:shadow-xl transition-all group">
                 <div className="w-12 h-12 rounded-xl bg-bg-main flex items-center justify-center text-primary-dark group-hover:bg-highlight transition-colors">

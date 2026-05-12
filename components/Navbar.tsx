@@ -14,31 +14,45 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Stay", href: "/rooms" },
-  { name: "Experience", href: "/experience" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "HOME", href: "/" },
+  { name: "STAY", href: "/rooms" },
+  { name: "EXPERIANCE", href: "/experience" },
+  { name: "ABOUT", href: "/about" },
+  { name: "CONTACT", href: "/contact" },
+  { name: "FAQ", href: "/faq" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+      
+      // Hide if scrolling down and passed 100px
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 w-full z-[100] transition-all duration-500 py-4 md:py-6 px-4 md:px-16",
-        scrolled ? "glass shadow-lg bg-primary-dark/90" : "bg-transparent"
+        scrolled ? "glass shadow-lg bg-primary-dark/90" : "bg-transparent",
+        !visible && "-translate-y-full"
       )}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">

@@ -53,7 +53,7 @@ const rooms = [
     description: "Experience authentic kampung living in our beautifully restored traditional wooden house. Full of heritage and charm.",
     capacity: "15 Guests",
     beds: "Traditional Bedding",
-    price: "Contact for Pricing",
+    price: "RM250",
     image: "/pic/resort/traditionalMalayHouse.jpg",
   },
 ];
