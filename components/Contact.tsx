@@ -63,8 +63,9 @@ export default function Contact() {
                   <Clock size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-secondary mb-1">Check-in</h4>
-                  <p className="text-lg font-bold text-primary-dark">2:00 PM - 12:00 AM</p>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-secondary mb-1">Stay Policy</h4>
+                  <p className="text-lg font-bold text-primary-dark">Check-in: 3:00 PM</p>
+                  <p className="text-lg font-bold text-primary-dark">Check-out: 12:00 PM</p>
                 </div>
               </div>
             </div>

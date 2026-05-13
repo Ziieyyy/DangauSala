@@ -12,14 +12,24 @@ import Image from "next/image";
 
 const rooms = [
   {
-    id: "pool",
-    title: "Pool View",
-    description: "Contemporary container living just steps away from our refreshing pool. Modern, sleek, and convenient.",
+    id: "pool1",
+    title: "Pool View 1",
+    description: "Contemporary container living just steps away from our refreshing pool. Modern, sleek, and convenient for families.",
     capacity: "4 Adults, 1 Child",
-    beds: "Multiple Bed Options",
-    price: "RM180",
+    beds: "1 Queen, 1 Double Decker",
+    price: "RM230",
     image: "/pic/rooms/PoolView1.jpeg",
   },
+  {
+    id: "pool2",
+    title: "Pool View 2",
+    description: "A cozy and intimate pool-side retreat. Perfect for couples or small families seeking a modern stay.",
+    capacity: "2 Adults, 1 Child",
+    beds: "1 Queen Bed",
+    price: "RM180",
+    image: "/pic/rooms/PoolView2.jpeg",
+  },
+
   {
     id: "jerai",
     title: "Jerai View",

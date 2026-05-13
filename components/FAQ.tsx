@@ -5,7 +5,7 @@ import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 
 const faqs = [
-  { q: "What are the check-in and check-out times?", a: "Check-in is from 2:00 PM, and check-out is by 12:00 PM." },
+  { q: "What are the check-in and check-out times?", a: "Check-in is from 3:00 PM, and check-out is by 12:00 PM." },
   { q: "Is there a swimming pool?", a: "Yes, we have a beautiful communal swimming pool for all our guests to enjoy." },
   { q: "Do you provide BBQ facilities?", a: "Yes, BBQ sets and areas are available upon request for a small fee." },
   { q: "Is breakfast included in the stay?", a: "We offer various meal packages. Please contact us via WhatsApp for the latest menu and pricing." },

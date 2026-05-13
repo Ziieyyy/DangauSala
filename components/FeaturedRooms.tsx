@@ -15,13 +15,22 @@ const featuredRooms = [
     beds: "1 Queen, 2 Double Decks",
   },
   {
-    id: "pool",
-    title: "Pool View",
-    price: "RM180",
+    id: "pool1",
+    title: "Pool View 1",
+    price: "RM230",
     image: "/pic/rooms/PoolView1.jpeg",
-    capacity: "4 Adults",
-    beds: "Multiple Bed Options",
+    capacity: "4 Adults, 1 Child",
+    beds: "1 Queen, 1 Double Decker",
   },
+  {
+    id: "pool2",
+    title: "Pool View 2",
+    price: "RM180",
+    image: "/pic/rooms/PoolView2.jpeg",
+    capacity: "2 Adults, 1 Child",
+    beds: "1 Queen Bed",
+  },
+
   {
     id: "traditional",
     title: "Traditional Malay House",
@@ -61,7 +70,7 @@ export default function FeaturedRooms() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {featuredRooms.map((room) => (
             <motion.div
