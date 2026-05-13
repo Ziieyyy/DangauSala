@@ -32,9 +32,9 @@ export default function Hero() {
           <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-[0.2em] mb-6 text-highlight">
             Established 2019
           </span>
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-serif font-bold leading-[1.1] md:leading-[0.9] tracking-tighter mb-6 md:mb-8">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-serif font-bold leading-tight md:leading-tight tracking-tighter mb-6 md:mb-8">
             Escape Into <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-highlight to-accent italic">Nature's Serenity</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-highlight to-accent italic pr-4">Nature's Serenity</span>
           </h1>
         </motion.div>
 
